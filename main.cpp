@@ -69,9 +69,9 @@ Iterates through the arr to find all possible combinations of numbers in the arr
 i.e
 caller -> find(0, 10, [9, 4, 1]);
 
-i = 0, x = 10  sum = ""
-i = 1, x = 1   sum = "9"
-i = 2, x = 0   sum = "9 + 1"
+i = 0, x = 10             stk = ""
+i = 2, x = 1              stk = "9"
+i = Int.MAX, x = 0        stk = "9 + 1"
 
 @i - current index
 @x - current x value.
