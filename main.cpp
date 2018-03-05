@@ -78,7 +78,7 @@ i = 2, x = 0, stk = "91"
 @arr - container for all unique sums
 &stk - builds the current combination of numbers 
 */
-void find(int i, int x, std::vector<int> &arr, std::string &stk) {
+void find(int i, int x, std::vector<int> &arr) {
  
   if (x < 0) return;
   if (x == 0) {
@@ -88,10 +88,8 @@ void find(int i, int x, std::vector<int> &arr, std::string &stk) {
     int r, t;
     while (i < arr.size()) {
       r = x - arr[i];
-      stk.append(std::to_string(arr[i]));
       t = map[r] > i + 1 ? map[r] : i + 1;
-      find(t, r, arr, stk);
-      stk.pop_back();
+      find(t, r, arr);
       i++;
     }
   }
@@ -108,7 +106,6 @@ int main() {
   build_arr(n, x, arr);
   std::reverse(arr.begin(), arr.end());
   gen_map(x, arr);
-  std::string stk;
-  find(0, x, arr, stk);
+  find(0, x, arr);
   std::cout << tot << std::endl;
 }
