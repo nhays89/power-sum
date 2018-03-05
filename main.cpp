@@ -67,15 +67,15 @@ Req: Implement using recursion.
 Iterates through the arr to find all possible combinations of numbers in the arr that sum to x.
 
 i.e
-caller -> find(0, 10, [2,4,9], "");
+caller -> find(0, 10, [9, 4, 1]);
 
-i = 0, x = 10, stk = ""
-i = 1, x = 1, stk= "9"
-i = 2, x = 0, stk = "91"
+i = 0, x = 10  sum = ""
+i = 1, x = 1   sum = "9"
+i = 2, x = 0   sum = "9 + 1"
 
 @i - current index
 @x - current x value.
-@arr - container for all unique sums
+@arr - container for all unique sums (desc order)
 &stk - builds the current combination of numbers 
 */
 void find(int i, int x, std::vector<int> &arr) {
