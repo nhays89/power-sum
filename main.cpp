@@ -81,7 +81,7 @@ i = Int.MAX, x = 0        stk = "9 + 1"
 void find(int i, int x, std::vector<int> &arr) {
  
   if (x < 0) return;
-  if (x == 0) {
+  else if (x == 0) {
     tot++;
   }
   else {
